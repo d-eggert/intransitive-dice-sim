@@ -51,13 +51,23 @@
       />
     </v-col>
     <v-col cols="auto">
-      <v-btn
-        class="mx-auto"
-        color="primary"
-        text="Würfeln!"
-        :disabled="selectedDice.length < 2"
-        @click="runSimulation()"
-      />
+      <v-tooltip
+        text="Wähle mind. zwei Würfel"
+        location="bottom"
+        :disabled="selectedDice.length > 1"
+      >
+        <template #activator="{ props }">
+          <div v-bind="props">
+            <v-btn
+              class="mx-auto"
+              color="primary"
+              text="Würfeln!"
+              :disabled="selectedDice.length < 2"
+              @click="runSimulation()"
+            />
+          </div>
+        </template>
+      </v-tooltip>
     </v-col>
   </v-row>
   <v-row
