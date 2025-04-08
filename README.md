@@ -1,1 +1,0 @@
-## Intransitive Dice Simulator
